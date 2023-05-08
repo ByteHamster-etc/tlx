@@ -49,7 +49,7 @@ jobs:
           gcc_install: "13"
           cxx_flags: "-D_GLIBCXX_DEBUG"
 
-        - name: "macOS 12 clang 12 Debug"
+        - name: "macOS 12 clang 14 Debug"
           os: macos-12
           build_type: "Debug"
 
@@ -69,7 +69,7 @@ jobs:
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
           ls -la /var/lib/apt/lists/
-          grep Package /var/lib/apt/lists/ppa:ubuntu-toolchain-r_Packages
+          grep Package /var/lib/apt/lists/ppa.launchpad.net_ubuntu-toolchain-r_test*
           sudo apt-get install gcc-${{matrix.config.gcc_install}} g++-${{matrix.config.gcc_install}}
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{matrix.config.gcc_install}} 90 --slave /usr/bin/g++ g++ /usr/bin/g++-${{matrix.config.gcc_install}}
           echo --- gcc version after
