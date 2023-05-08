@@ -68,8 +68,7 @@ jobs:
           gcc --version
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
-          sudo ls -la /var/lib/apt/lists/
-          sudo grep Package /var/lib/apt/lists/ppa.launchpad.net_ubuntu-toolchain-r_test*
+          grep gcc /var/lib/apt/lists/*
           sudo apt-get install gcc-${{matrix.config.gcc_install}} g++-${{matrix.config.gcc_install}}
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{matrix.config.gcc_install}} 90 --slave /usr/bin/g++ g++ /usr/bin/g++-${{matrix.config.gcc_install}}
           echo --- gcc version after
