@@ -38,6 +38,17 @@ jobs:
           gcc_install: "11"
           cxx_flags: "-D_GLIBCXX_DEBUG"
 
+        - name: "Ubuntu 22.04 gcc 13 Debug"
+          os: ubuntu-22.04
+          build_type: "Debug"
+          gcc_install: "13"
+
+        - name: "Ubuntu 22.04 gcc 13 Release GLIBCXX_DEBUG"
+          os: ubuntu-22.04
+          build_type: "Release"
+          gcc_install: "13"
+          cxx_flags: "-D_GLIBCXX_DEBUG"
+
         - name: "macOS 10.15 clang 12 Debug"
           os: macos-10.15
           build_type: "Debug"
